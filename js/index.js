@@ -34,7 +34,7 @@ let messaggio = 'Prezzo del biglietto: ';
 if(!isNaN(km) && !isNaN(age)) {
     // Condizione sconto sotto i 18 anni
     if (age < 18 ){
-          messaggio += (ticketPrice * discountForMinors).toFixed(2);
+          messaggio += (ticketPrice -(ticketPrice * discountForMinors)).toFixed(2);
 
          document.getElementById('testo').innerHTML = 
          `
@@ -42,7 +42,7 @@ if(!isNaN(km) && !isNaN(age)) {
          `;
      // Condizione sconto superiore ai 65 anni
     } else if (age > 65 ) {
-        messaggio += (ticketPrice * discountOver65).toFixed(2);
+        messaggio += (ticketPrice - (ticketPrice * discountOver65)).toFixed(2);
         document.getElementById('testo').innerHTML = 
         `
         <h1> ${messaggio} </h1>
